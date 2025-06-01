@@ -8,19 +8,19 @@ public class Principal {
         int opcion = 0;
         double valor;
 
-        while (opcion != 7) {
+        while (opcion != 9) {
             mostrarMenu();
 
             try {
                 opcion = Integer.valueOf(scanner.nextLine());
 
-                if (opcion == 7) {
+                if (opcion == 9) {
                     System.out.println("Saliendo del programa...");
                     break;
                 }
 
-                if (opcion < 1 || opcion > 7) {
-                    System.out.println("Debe elegir una opción entre 1 y 7.");
+                if (opcion < 1 || opcion > 8) {
+                    System.out.println("Debe elegir una opción entre 1 y 9.");
                     continue;
                 }
 
@@ -29,14 +29,16 @@ public class Principal {
                 valor = Double.parseDouble(input);
 
                 switch (opcion) {
-                    case 1 -> mostrarResultadoConversion(consulta, "USD", "ARS", valor);
-                    case 2 -> mostrarResultadoConversion(consulta, "ARS", "USD", valor);
-                    case 3 -> mostrarResultadoConversion(consulta, "USD", "BRL", valor);
-                    case 4 -> mostrarResultadoConversion(consulta, "BRL", "USD", valor);
-                    case 5 -> mostrarResultadoConversion(consulta, "USD", "COP", valor);
-                    case 6 -> mostrarResultadoConversion(consulta, "COP", "USD", valor);
+                    case 1 -> mostrarResultadoConversion(consulta, "USD", "PEN", valor);
+                    case 2 -> mostrarResultadoConversion(consulta, "PEN", "USD", valor);
+                    case 3 -> mostrarResultadoConversion(consulta, "USD", "ARS", valor);
+                    case 4 -> mostrarResultadoConversion(consulta, "ARS", "USD", valor);
+                    case 5 -> mostrarResultadoConversion(consulta, "USD", "BRL", valor);
+                    case 6 -> mostrarResultadoConversion(consulta, "BRL", "USD", valor);
+                    case 7 -> mostrarResultadoConversion(consulta, "USD", "COP", valor);
+                    case 8 -> mostrarResultadoConversion(consulta, "COP", "USD", valor);
 
-                    default -> System.out.println("Opción no válida. Por favor, elija una opción entre 1 y 7.");
+                    default -> System.out.println("Opción no válida. Por favor, elija una opción entre 1 y 9.");
                 }
 
             } catch (NumberFormatException e) {
@@ -52,14 +54,16 @@ public class Principal {
             ****************************************************************
             Sea bienvenido/a al Conversor de Moneda =] 
             
-            1) Dólar            =>>     Peso argentino 
-            2) Peso argentino   =>>     Dólar 
-            3) Dólar            =>>     Real brasileño 
-            4) Real brasileño   =>>     Dólar 
-            5) Dólar            =>>     Peso colombiano 
-            6) Peso colombiano  =>>     Dólar
+            1) Dolar            =>>     Sol peruano
+            2) Sol peruano      =>>     Dólar
+            3) Dólar            =>>     Peso argentino 
+            4) Peso argentino   =>>     Dólar 
+            5) Dólar            =>>     Real brasileño 
+            6) Real brasileño   =>>     Dólar 
+            7) Dólar            =>>     Peso colombiano 
+            8) Peso colombiano  =>>     Dólar
             
-            7) Salir 
+            9) Salir 
             ****************************************************************
             
             Elija una opción válida: 
